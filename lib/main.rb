@@ -1,1 +1,4 @@
-require_relative 'lib/game'
+require './lib/game'
+
+game = ConnectFour::Game.new
+game.start

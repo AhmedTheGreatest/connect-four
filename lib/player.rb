@@ -1,11 +1,11 @@
 module ConnectFour
   # This class represents a player in Connect Four
   class Player
-    attr_reader :name, :symbol
+    attr_reader :name, :disc
 
     def initialize(name, symbol)
       @name = name
-      @symbol = symbol
+      @disc = symbol
     end
 
     def get_input(min, max)

@@ -47,6 +47,10 @@ module ConnectFour
       @board.all? { |col| column_full?(col) }
     end
 
+    def game_end?(player1, player2)
+      true if draw? || player_won?(player1) || player_won?(player2)
+    end
+
     # Returns the winner player or nil for a draw
     def winner(player1, player2)
       return player1 if player_won?(player1)
@@ -57,7 +61,7 @@ module ConnectFour
     end
 
     def display_board(default = "\u{2B55}")
-      puts @board.transpose.map { |col| col.map { |cell| default if cell.nil?}.join('')}.join("\n")
+      puts @board.transpose.map { |col| col.map { |cell| cell.nil? ? default : cell }.join('')}.join("\n")
     end
 
     private
