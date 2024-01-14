@@ -36,11 +36,6 @@ module ConnectFour
       (0...@column_length).each do |column|
         (0...@row_length).each do |row|
           return true if consecutive_discs?(diagonal_left_to_right(column, row), player)
-        end
-      end
-
-      (0...@column_length).each do |column|
-        (0...@row_length).each do |row|
           return true if consecutive_discs?(diagonal_right_to_left(column, row), player)
         end
       end
